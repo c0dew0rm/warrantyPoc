@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   }
 
   onLoginFormSubmit(formValue: FormGroup ) {
-    console.log("Hello.")
+    this.route.navigate(['home']);
   }
 
   onForgotPasswordFormSubmit(formValue: FormGroup) {

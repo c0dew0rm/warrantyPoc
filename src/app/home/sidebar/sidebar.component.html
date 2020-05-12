@@ -5,13 +5,13 @@
       </div>
       <ul class="sidebar-nav">
         <li class="active">
-          <a href="#"><i class="fa fa-home"></i>Inward Inventory Details</a>
+          <a routerLink="inward"><i class="fa fa-home"></i>Inward Inventory Details</a>
         </li>
         <li>
-          <a href="#"><i class="fa fa-plug"></i>Outward Inventory Details</a>
+          <a routerLink="outward"><i class="fa fa-plug"></i>Outward Inventory Details</a>
         </li>
         <li>
-          <a href="#"><i class="fa fa-user"></i>Warranty</a>
+          <a routerLink="warranty"><i class="fa fa-user"></i>Warranty</a>
         </li>
       </ul>
     </aside>
@@ -29,8 +29,7 @@
     <section id="content-wrapper">
         <div class="row">
           <div class="col-lg-12">
-            <h2 class="content-title">Test</h2>
-            <p>Lorem ipsum...</p>
+            <router-outlet></router-outlet>
           </div>
         </div>
     </section>

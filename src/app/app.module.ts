@@ -7,13 +7,19 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SidebarComponent } from './home/sidebar/sidebar.component';
 import { HomeComponent } from './home/home.component';
+import { InwardComponent } from './home/inward/inward.component';
+import { OutwardComponent } from './home/outward/outward.component';
+import { WarrantyComponent } from './home/warranty/warranty.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SidebarComponent,
-    HomeComponent
+    HomeComponent,
+    InwardComponent,
+    OutwardComponent,
+    WarrantyComponent
   ],
   imports: [
     BrowserModule,

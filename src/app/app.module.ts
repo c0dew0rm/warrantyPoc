@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { InwardComponent } from './home/inward/inward.component';
 import { OutwardComponent } from './home/outward/outward.component';
 import { WarrantyComponent } from './home/warranty/warranty.component';
+import { WarrantyInfoComponent } from './home/warranty/warranty-info/warranty-info.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { WarrantyComponent } from './home/warranty/warranty.component';
     HomeComponent,
     InwardComponent,
     OutwardComponent,
-    WarrantyComponent
+    WarrantyComponent,
+    WarrantyInfoComponent
   ],
   imports: [
     BrowserModule,

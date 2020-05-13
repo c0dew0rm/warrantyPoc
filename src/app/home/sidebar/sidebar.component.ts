@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -11,9 +12,11 @@ export class SidebarComponent implements OnInit {
   activatedButton: string;
   barsIcon = faBars;
 
-  constructor() { }
+  constructor(private route: Router, private activatedRoute: ActivatedRoute,) { }
 
   ngOnInit(): void {
+    this.activatedButton = 'inward';
+    this.route.navigate(['inward'], { relativeTo: this.activatedRoute });
   }
 
   onClick(str:string) {

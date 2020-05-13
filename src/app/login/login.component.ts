@@ -29,7 +29,12 @@ export class LoginComponent implements OnInit {
   }
 
   onLoginFormSubmit(formValue: FormGroup ) {
-    this.route.navigate(['home']);
+    if(formValue.value.email==='rahul@transpacks.co' && formValue.value.password==='transpacks123') {
+      this.route.navigate(['home']);
+    }
+    else {
+      console.log("Invalid Credentials")
+    }
   }
 
   onForgotPasswordFormSubmit(formValue: FormGroup) {

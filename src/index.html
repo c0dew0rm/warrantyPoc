@@ -22,6 +22,14 @@
         });
       });
     });
-    </script>
+    const $button  = document.querySelector('#sidebar-toggle');
+    const $wrapper = document.querySelector('#wrapper');
+    if($button){
+      $button.addEventListener("click", (e) => {
+      e.preventDefault();
+      $wrapper.classList.toggle("toggled");
+    });
+    }
+  </script>
 </body>
 </html>

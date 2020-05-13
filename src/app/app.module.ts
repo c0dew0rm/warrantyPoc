@@ -11,6 +11,7 @@ import { InwardComponent } from './home/inward/inward.component';
 import { OutwardComponent } from './home/outward/outward.component';
 import { WarrantyComponent } from './home/warranty/warranty.component';
 import { WarrantyInfoComponent } from './home/warranty/warranty-info/warranty-info.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { WarrantyInfoComponent } from './home/warranty/warranty-info/warranty-in
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

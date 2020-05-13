@@ -4,14 +4,14 @@
         <h2>Logo</h2>
       </div>
       <ul class="sidebar-nav">
-        <li class="active">
-          <a routerLink="inward"><i class="fa fa-home"></i>Inward Inventory Details</a>
+        <li [ngClass]="checkCondition('inward')">
+          <a routerLink="inward" (click)="onClick('inward')"><i class="fa fa-home"></i>Inward Inventory Details</a>
         </li>
-        <li>
-          <a routerLink="outward"><i class="fa fa-plug"></i>Outward Inventory Details</a>
+        <li [ngClass]="checkCondition('outward')">
+          <a routerLink="outward" (click)="onClick('outward')"><i class="fa fa-plug"></i>Outward Inventory Details</a>
         </li>
-        <li>
-          <a routerLink="warranty"><i class="fa fa-user"></i>Warranty</a>
+        <li [ngClass]="checkCondition('warranty')">
+          <a routerLink="warranty" (click)="onClick('warranty')"><i class="fa fa-user"></i>Warranty-Query</a>
         </li>
       </ul>
     </aside>
@@ -20,7 +20,7 @@
       <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a href="#" class="navbar-brand" id="sidebar-toggle"><i class="fa fa-bars"></i></a>
+            <a href="#" class="navbar-brand" id="sidebar-toggle"><fa-icon [icon]="barsIcon"></fa-icon></a>
           </div>
         </div>
       </nav>

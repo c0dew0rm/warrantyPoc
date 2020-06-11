@@ -1,0 +1,85 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6 addButtonContainer">
+                    <div class="btn btn-success add-btn" (click) = "this.errMessage = null" data-target="#addSku" data-toggle="modal">
+                        <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add SKU
+                    </div>
+                </div>
+                <div class="col-md-6 uploadButtonContainer">
+                    <div class="btn btn-success add-btn" (click) = "this.errMessage = null" data-target="#fileUpload" data-toggle="modal">
+                        <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Upload Excel
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="fileUpload" tabindex="-1" role="dialog" aria-labelledby="fileUpload"
+            aria-hidden="true" 
+            data-backdrop="static">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Upload Excel</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="resetFormInfo()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <label for="exampleFormControlFile1">Upload .xls or .xlsx</label>
+                        <input (change)="fileChange($event)" type="file" accept=".xls, .xlsx" class="form-control-file" id="exampleFormControlFile1">
+                        <ngx-spinner></ngx-spinner>
+                        <!-- <div class="progress">
+                            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadProgress | async) + '%'" [attr.aria-valuenow]="(uploadProgress | async)" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div> -->
+                        <!-- <form class="form-group" [formGroup]="excelForm" (ngSubmit)="OnUpload(excelForm)" id="excelForm">
+                            <label for="exampleFormControlFile1">Upload .xls or .xlsx</label>
+                            <file-upload [control]="fileUploadControl" formControlName="excelSheet"></file-upload>
+                            <input type="file" class="form-control-file" formControlName="excelSheet" id="exampleFormControlFile1">
+                        </form> -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" (click)="onUpload()">Upload</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"(click)="resetFormInfo()">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="addSku" tabindex="-1" role="dialog" aria-labelledby="addSku"
+            aria-hidden="true" 
+            data-backdrop="static">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add SKU</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="resetFormInfo()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-group" [formGroup]="addSkuForm" (ngSubmit)="addNewSku(addSkuForm)" id="addskuForm">
+                            SKU Id<i class="astrik">*</i>
+                            <input type="text" class="form-control" formControlName="skuId" placeholder="SKU Id"><br>
+                            Company Id<i class="astrik">*</i>
+                            <input type="text" class="form-control" formControlName="companyId" placeholder="Company Id"><br>
+                            SKU Name<i class="astrik">*</i>
+                            <input type="text" class="form-control" formControlName="skuName" placeholder="SKU Name"><br>
+                            Product Name<i class="astrik">*</i>
+                            <input type="text" class="form-control" formControlName="productName" placeholder="Product Name"><br>
+                            Product Price<i class="astrik">*</i>
+                            <input type="text" class="form-control" formControlName="productPrice" placeholder="Product Price"><br>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Add SKU</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"(click)="resetFormInfo()">Close</button>
+                                  <!-- Added by Rahul Kumar -->
+                                <!-- <button *ngIf="addProductForm.valid && validateCharLimit()" type="submit" class="btn cst_btn">Add SKU</button>
+                                <button *ngIf="!addProductForm.valid || !vali
+                                dateCharLimit()" type="submit" disabled class="btn cst_btn">Add SKU</button> -->
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

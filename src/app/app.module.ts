@@ -12,6 +12,18 @@ import { OutwardComponent } from './home/outward/outward.component';
 import { WarrantyComponent } from './home/warranty/warranty.component';
 import { WarrantyInfoComponent } from './home/warranty/warranty-info/warranty-info.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SkuComponent } from './home/sku/sku.component';
+import { FileUploadModule } from '@iplab/ngx-file-upload';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+
+import { environment } from '../environments/environment'
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { CommonModule } from '@angular/common';
+import { ToastrModule } from 'ngx-toastr';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +34,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     InwardComponent,
     OutwardComponent,
     WarrantyComponent,
-    WarrantyInfoComponent
+    WarrantyInfoComponent,
+    SkuComponent
   ],
   imports: [
     BrowserModule,
@@ -30,8 +43,18 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FormsModule,
     ReactiveFormsModule,
     FontAwesomeModule,
+    FileUploadModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    HttpClientModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule,
+    CommonModule,
+    ToastrModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    HttpClient
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
